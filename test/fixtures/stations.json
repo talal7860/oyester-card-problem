@@ -1,0 +1,18 @@
+[
+  {
+    "name":"Holborn",
+    "zones":[ 1 ]
+  },
+  {
+    "name":"Earl's Court",
+    "zones":[ 1, 2 ]
+  },
+  {
+    "name":"Wimbledon",
+    "zones":[ 3 ]
+  },
+  {
+    "name":"Hammersmith",
+    "zones":[ 2 ]
+  }
+]

@@ -17,8 +17,8 @@ export type Journey = ZONE_1 |
            ANY_BUS_JOURNEY;
 
 export type Fare = {
-  pricePennies: number,
   journey: Journey,
+  pricePennies: number,
 };
 
 
