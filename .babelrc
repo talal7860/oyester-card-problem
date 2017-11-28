@@ -1,4 +1,9 @@
 {
   "presets": ["es2017"],
-  "plugins": ["typecheck", "syntax-flow", "transform-flow-strip-types"]
+  "plugins": ["typecheck", "syntax-flow", "transform-flow-strip-types"],
+  "env" : {
+    "test" : {
+      "plugins": "istanbul"
+    }
+  }
 }
