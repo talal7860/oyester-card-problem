@@ -14,7 +14,7 @@ describe('Fare Calculation', () => {
 
   it('should calculate the trip from Holborn to Wimbledon as $2.00', () => {
     const fare = calculateFare(fares, stations, trip2);
-    expect(fare).to.eql(200);
+    expect(fare).to.eql(300);
   });
 
   it('should calculate the trip from Earl\'s Court to Hammersmith as $2.00', () => {

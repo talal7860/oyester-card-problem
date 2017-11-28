@@ -28,7 +28,7 @@ const identifyTubeJourneyType = (fares: Array<Object>, stations: Array<Object>, 
     return ANY_THREE_ZONES;
   } else if (includes(1, startStation.zones) && includes(1, endStation.zones)) {
     return ZONE_1;
-  } else if (without([1], zones).length === 1) {
+  } else if (without([1], startStation.zones).length === 1 && without([1], endStation.zones).length === 1 && without([1], zones).length === 1) {
     return ANY_1_OUTSIDE_ZONE_1;
   } else if (zones.length === 2 && without([1], zones).length === 1) {
     return ANY_TWO_ZONES_INC_ZONE_1;
