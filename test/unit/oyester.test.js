@@ -7,18 +7,18 @@ import trip3 from '../fixtures/trip3.json';
 import { calculateFare } from '../../src/index';
 
 describe('Fare Calculation', () => {
-  it('should calculate the fare of Holborn from Earl\'s Court as $2.50 pennies', () => {
+  it('should calculate the fare of Holborn from Earl\'s Court as $2.50', () => {
     const fare = calculateFare(fares, stations, trip1);
     expect(fare).to.eql(250);
   });
 
-  it('should calculate the trip from Holborn to Wimbledon as $3.00 pennies', () => {
+  it('should calculate the trip from Holborn to Wimbledon as $2.00', () => {
     const fare = calculateFare(fares, stations, trip2);
-    expect(fare).to.eql(300);
+    expect(fare).to.eql(200);
   });
 
-  it('should calculate the trip from Earl\'s Court to Hammersmith as $2.00 pennies', () => {
-    const fare = calculateFare(fares, stations, trip2);
+  it('should calculate the trip from Earl\'s Court to Hammersmith as $2.00', () => {
+    const fare = calculateFare(fares, stations, trip3);
     expect(fare).to.eql(200);
   });
 });

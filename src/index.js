@@ -23,11 +23,12 @@ const identifyTubeJourneyType = (fares: Array<Object>, stations: Array<Object>, 
     ANY_THREE_ZONES,
     ANY_BUS_JOURNEY,
   } = JOURNEY_TYPES;
+
   if (intersection([1, 2, 3], zones).length === 3) {
     return ANY_THREE_ZONES;
   } else if (includes(1, startStation.zones) && includes(1, endStation.zones)) {
     return ZONE_1;
-  } else if (zones.length === 1 && includes(zones[0], [2, 3])) {
+  } else if (without([1], zones).length === 1) {
     return ANY_1_OUTSIDE_ZONE_1;
   } else if (zones.length === 2 && without([1], zones).length === 1) {
     return ANY_TWO_ZONES_INC_ZONE_1;
