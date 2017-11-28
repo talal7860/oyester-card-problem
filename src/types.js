@@ -1,4 +1,4 @@
-import { JOURNEY_TYPES, TRANSPORTS } from './consts';
+import { JOURNEY_TYPES } from './consts';
 
 const {
   ZONE_1,
@@ -29,11 +29,10 @@ export type Station = {
   zones: Array<Zone>,
 };
 
-export type Transport = TRANSPORTS.bus | TRANSPORTS.tube;
+export type Transport = 'bus' | 'tube';
 
 export type Trip = {
   start: string,
   end: string,
   transport: Transport,
 };
-
