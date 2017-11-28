@@ -6,6 +6,8 @@ import trip2 from '../fixtures/trip2.json';
 import trip3 from '../fixtures/trip3.json';
 import trip4 from '../fixtures/trip4.json';
 import trip5 from '../fixtures/trip5.json';
+import trip6 from '../fixtures/trip6.json';
+import tripMain from '../fixtures/trip_main.json';
 import { calculateBalance } from '../../src/index';
 
 describe('Balance Calculation from total of £30', () => {
@@ -30,13 +32,23 @@ describe('Balance Calculation from total of £30', () => {
     expect(fare).to.eql(2775);
   });
 
-  it('should calculate the trip from Hammersmith to Wimbledon as £27.75', () => {
+  it('should calculate the balance of the trip from Hammersmith to Wimbledon as £27.75', () => {
     const fare = calculateBalance(balance, fares, stations, trip4);
     expect(fare).to.eql(2775);
   });
 
-  it('should calculate the trip from Earl\'s Court to Wimbledon as £26.80', () => {
+  it('should calculate the balance of the trip from Earl\'s Court to Wimbledon as £26.80', () => {
     const fare = calculateBalance(balance, fares, stations, trip5);
     expect(fare).to.eql(2680);
+  });
+
+  it('should calculate the balance of the trip through a bus as £28.20', () => {
+    const fare = calculateBalance(balance, fares, stations, trip6);
+    expect(fare).to.eql(2820);
+  });
+
+  it('should calculate the main trip as £23.70', () => {
+    const fare = calculateBalance(balance, fares, stations, tripMain);
+    expect(fare).to.eql(2370);
   });
 });
