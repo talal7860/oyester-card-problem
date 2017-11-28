@@ -54,4 +54,7 @@ const calculateFare = (fares: Array<Object>, stations: Array<Object>, trips: Arr
   return totalFare;
 };
 
-export { calculateFare };
+const calculateBalance = (balance: number, fares: Array<Object>, stations: Array<Object>, trips: Array<Object>) =>
+  (balance - calculateFare(fares, stations, trips));
+
+export { calculateBalance };
