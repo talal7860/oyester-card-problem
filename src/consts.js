@@ -5,7 +5,11 @@ export const JOURNEY_TYPES = {
   ANY_TWO_ZONES_INC_ZONE_1: 3,
   ANY_TWO_ZONES_EXC_ZONE_1: 4,
   ANY_THREE_ZONES: 5,
-  ANY_BUST_JOURNEY: 6,
+  ANY_BUS_JOURNEY: 6,
 };
 
-export default JOURNEY_TYPES;
+export const TRANSPORTS = {
+  tube: 'tube',
+  bus: 'bus',
+};
+
