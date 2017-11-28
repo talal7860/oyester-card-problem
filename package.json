@@ -19,7 +19,7 @@
     "babel-plugin-syntax-flow": "^6.5.0",
     "babel-plugin-transform-flow-strip-types": "^6.5.0",
     "babel-plugin-typecheck": "^3.6.1",
-    "babel-preset-es2017": "^1.6.1",
+    "babel-preset-env": "^1.6.1",
     "chai": "3.5.0",
     "cross-env": "^5.1.1",
     "eslint": "^3.9.1",
@@ -35,10 +35,5 @@
     "debug": "^2.3.2",
     "lodash": "^4.3.0",
     "util": "^0.10.3"
-  },
-  "david": {
-    "ignore": [
-      "babel-preset-es2017"
-    ]
   }
 }
