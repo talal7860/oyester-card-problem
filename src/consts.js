@@ -13,3 +13,4 @@ export const TRANSPORTS = {
   bus: 'bus',
 };
 
+export const BUS_JOURNEY_TYPE = 6;
