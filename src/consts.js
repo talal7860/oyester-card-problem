@@ -12,5 +12,3 @@ export const TRANSPORTS = {
   tube: 'tube',
   bus: 'bus',
 };
-
-export const BUS_JOURNEY_TYPE = 6;
