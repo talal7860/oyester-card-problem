@@ -5,10 +5,18 @@ import type {
   Station,
 } from './types';
 
+const tripMap = {};
+tripMap[TRANSPORTS.bus] = BusTrip;
+tripMap[TRANSPORTS.tube] = TubeTrip;
+
 class Trip {
   constructor(start, end) {
     this.start = start;
     this.end = end;
+  }
+
+  static tripFromObject(tripObj) {
+    return new tripMap[trip.transport](tripObj.start, tripObj.end);
   }
 }
 

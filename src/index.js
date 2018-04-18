@@ -14,14 +14,8 @@ import {
 const getMaxFare = (fares: Array<Object>) =>
   maxBy(fare => fare.pricePennies, fares).pricePennies;
 
-const getTripObjs = (trips: Array<Object>) => {
-  const tripMap = {};
-  tripMap[TRANSPORTS.bus] = BusTrip;
-  tripMap[TRANSPORTS.tube] = TubeTrip;
-  return trips.map(trip => {
-    return new tripMap[trip.transport](trip.start, trip.end);
-  });
-}
+const getTripObjs = (trips: Array<Object>) =>
+  trips.map(trip => Trip.tripFromObject(trip))
 
 const calculateFare = (fares: Array<Object>, stations: Array<Object>, trips: Array<Object>, swipedIn: boolean) : number => {
   let totalFare = 0;
