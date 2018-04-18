@@ -48,9 +48,9 @@ describe('Balance Calculation from total of £30', () => {
     expect(fare).to.eql(2820);
   });
 
-  it('should calculate the main trip as £23.20', () => {
+  it('should calculate the main trip as £22.20', () => {
     const fare = calculateBalance(balance, fares, stations, tripMain, true);
-    expect(fare).to.eql(2320);
+    expect(fare).to.eql(2220);
   });
 
   it('should calculate the fare as max if the user does not swipe in', () => {
@@ -59,7 +59,7 @@ describe('Balance Calculation from total of £30', () => {
   });
 
   it('should allow the user to travel if the balance is sufficient', () => {
-    const balance = calculateBalance(250, fares, stations, trip1, true);
+    const balance = calculateBalance(300, fares, stations, trip1, true);
     expect(balance).to.eql(0);
   });
 
