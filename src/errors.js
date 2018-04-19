@@ -1,1 +1,5 @@
-export const InSufficentBalance = () => 'insufficient balance';
+const InSufficentBalance = () => 'insufficient balance';
+export {
+  InSufficentBalance,
+  InSufficentBalance as default,
+};

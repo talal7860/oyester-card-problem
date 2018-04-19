@@ -1,9 +1,5 @@
-import { find, includes, union, intersection, without, maxBy, minBy, filter, sortBy } from 'lodash/fp';
+import { find, union, sortBy } from 'lodash/fp';
 import { TRANSPORTS, JOURNEY_TYPES } from './consts';
-import type {
-  Fare,
-  Station,
-} from './types';
 import {
   predicateDefaultTrue,
   predicateAnyThreeZones,
@@ -12,6 +8,8 @@ import {
   predicateAnyOneOutsideZone1,
   predicateAnyTwoZonesDefault,
 } from './journey_type_predicates';
+
+const tripMap = {};
 
 class Trip {
   constructor(start, end) {
@@ -56,7 +54,6 @@ class TubeTrip extends Trip {
   }
 }
 
-const tripMap = {};
 tripMap[TRANSPORTS.bus] = BusTrip;
 tripMap[TRANSPORTS.tube] = TubeTrip;
 
@@ -65,4 +62,4 @@ export {
   Trip,
   BusTrip,
   TubeTrip,
-}
+};
