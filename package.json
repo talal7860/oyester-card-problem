@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "tdd": "DEBUG=oyester* NODE_ENV=test cross-env nyc mocha --require babel-core/register test/unit --watch",
     "test": "DEBUG=oyester* NODE_ENV=test cross-env nyc mocha --require babel-core/register test/unit",
     "coverage": "nyc report"
