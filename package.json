@@ -11,7 +11,7 @@
     "lint:fix": "eslint src --fix",
     "tdd": "DEBUG=oyester* NODE_ENV=test cross-env nyc mocha --require babel-core/register test/unit --watch",
     "test": "DEBUG=oyester* NODE_ENV=test cross-env nyc mocha --require babel-core/register test/unit",
-    "coverage": "nyc report"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -46,6 +46,7 @@
     "instrument": false
   },
   "dependencies": {
+    "coveralls": "^3.0.0",
     "debug": "^2.3.2",
     "lodash": "^4.3.0"
   }

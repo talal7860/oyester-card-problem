@@ -1,6 +1,7 @@
 # The Oyster Card Problem
 
 [![CircleCI](https://circleci.com/gh/talal7860/oyester-card-problem.svg?style=svg)](https://circleci.com/gh/talal7860/oyester-card-problem)
+[![Coverage Status](https://coveralls.io/repos/github/talal7860/oyester-card-problem/badge.svg?branch=master)](https://coveralls.io/github/talal7860/oyester-card-problem?branch=master)
 
 This problem models the following fare card system which is a limited version of
 London’s Oyster card system. At the end of the test, the tests written demonstrates a user
