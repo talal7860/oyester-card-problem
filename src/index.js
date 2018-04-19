@@ -21,7 +21,6 @@ const calculateFare = (fares: Array<Object>, stations: Array<Object>, trips: Arr
   let totalFare = 0;
   if (swipedIn === true) {
     totalFare = sumBy((trip) => trip.getFare(fares, stations), getTripObjs(trips));
-    console.log(totalFare);
   } else {
     totalFare = getMaxFare(fares);
   }

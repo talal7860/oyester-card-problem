@@ -1,13 +1,17 @@
-import { find, includes, union, intersection, without, maxBy, minBy, filter } from 'lodash/fp';
+import { find, includes, union, intersection, without, maxBy, minBy, filter, sortBy } from 'lodash/fp';
 import { TRANSPORTS, JOURNEY_TYPES } from './consts';
 import type {
   Fare,
   Station,
 } from './types';
-
-const tripMap = {};
-tripMap[TRANSPORTS.bus] = BusTrip;
-tripMap[TRANSPORTS.tube] = TubeTrip;
+import {
+  predicateDefaultTrue,
+  predicateAnyThreeZones,
+  predicateZone1,
+  predicateAnyTwoZones,
+  predicateAnyOneOutsideZone1,
+  predicateAnyTwoZonesDefault,
+} from './journey_type_predicates';
 
 class Trip {
   constructor(start, end) {
@@ -16,7 +20,7 @@ class Trip {
   }
 
   static tripFromObject(tripObj) {
-    return new tripMap[trip.transport](tripObj.start, tripObj.end);
+    return new tripMap[tripObj.transport](tripObj.start, tripObj.end);
   }
 }
 
@@ -33,35 +37,30 @@ class TubeTrip extends Trip {
   }
 
   identifyTubeJourneyType(fares: Array<Object>, stations: Array<Object>) {
-    console.log(stations);
-    console.log(this);
     const startStation = find(station => station.name === this.start, stations);
     const endStation = find(station => station.name === this.end, stations);
     const zones = union(startStation.zones, endStation.zones);
-    const {
-      ZONE_1,
-      ANY_1_OUTSIDE_ZONE_1,
-      ANY_TWO_ZONES_INC_ZONE_1,
-      ANY_TWO_ZONES_EXC_ZONE_1,
-      ANY_THREE_ZONES,
-      ANY_BUS_JOURNEY,
-    } = JOURNEY_TYPES;
 
-    if (intersection([1, 2, 3], zones).length === 3) {
-      return ANY_THREE_ZONES;
-    } else if (startStation.zones.length === 1 && startStation.zones[0] === 1 && endStation.zones.length === 1 && endStation[0] === 1) {
-      return ZONE_1;
-    } else if ((includes(1, startStation.zones) || includes(1, endStation.zones)) && (startStation.zones.length > 1 || endStation.zones.length > 1)) {
-      return ANY_TWO_ZONES_INC_ZONE_1;
-    } else if (without([1], startStation.zones).length === 1 && without([1], endStation.zones).length === 1 && without([1], zones).length === 1) {
-      return ANY_1_OUTSIDE_ZONE_1;
-    } else if (zones.length === 2 && without([1], zones).length === 1) {
-      return ANY_TWO_ZONES_INC_ZONE_1;
-    } // else if (zones.length === 2 && !includes(1, zones)) {
-    // }
-    return ANY_TWO_ZONES_EXC_ZONE_1;
+    const predicates = [
+      predicateAnyThreeZones,
+      predicateZone1,
+      predicateAnyTwoZones,
+      predicateAnyOneOutsideZone1,
+      predicateAnyTwoZonesDefault,
+      predicateDefaultTrue,
+    ];
+
+    const sorted = sortBy('p')(predicates);
+    const predicateObj = find((predicate => predicate.f(startStation, endStation, zones)), sorted);
+    return predicateObj.t;
   }
 }
+
+const tripMap = {};
+tripMap[TRANSPORTS.bus] = BusTrip;
+tripMap[TRANSPORTS.tube] = TubeTrip;
+
+
 export {
   Trip,
   BusTrip,
