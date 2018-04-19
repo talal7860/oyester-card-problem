@@ -1,5 +1,7 @@
 # The Oyster Card Problem
 
+[![CircleCI](https://circleci.com/gh/talal7860/oyester-card-problem.svg?style=svg)](https://circleci.com/gh/talal7860/oyester-card-problem)
+
 This problem models the following fare card system which is a limited version of
 London’s Oyster card system. At the end of the test, the tests written demonstrates a user
  loading a card with £30, and taking the following trips, and then viewing the balance.
