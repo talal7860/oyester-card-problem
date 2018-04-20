@@ -29,7 +29,7 @@ For the purposes of this test use the following data:
 
 **Station Zone(s)**  
 | **Stations** | **Zones** |
-| ------------ | :-------: |
+|--------------|:---------:|
 | Holborn      |     1     |
 | Earl’s Court |   1, 2    |
 | Wimbledon    |     3     |
