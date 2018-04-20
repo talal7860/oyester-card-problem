@@ -27,7 +27,7 @@ For the purposes of this test use the following data:
 
 ## Stations and zones:
 
-**Station Zone(s)**
+**Station Zone(s)**  
 Holborn 1  
 Earl’s Court 1, 2  
 Wimbledon 3  
@@ -35,7 +35,7 @@ Hammersmith 2
 
 ## Fares:
 
-**Journey Fare**
+**Journey Fare**  
 Anywhere in Zone 1 £2.  
 Any one zone outside zone 1 £2.  
 Any two zones including zone 1 £3.  
