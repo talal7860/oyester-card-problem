@@ -28,10 +28,12 @@ For the purposes of this test use the following data:
 ## Stations and zones:
 
 **Station Zone(s)**  
-Holborn 1  
-Earl’s Court 1, 2  
-Wimbledon 3  
-Hammersmith 2  
+| **Stations** | **Zones** |
+| ------------ | :-------: |
+| Holborn      |     1     |
+| Earl’s Court |   1, 2    |
+| Wimbledon    |     3     |
+| Hammersmith  |     2     |
 
 ## Fares:
 
