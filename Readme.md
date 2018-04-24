@@ -39,12 +39,16 @@ For the purposes of this test use the following data:
 ## Fares:
 
 **Journey Fare**  
-Anywhere in Zone 1 £2.  
-Any one zone outside zone 1 £2.  
-Any two zones including zone 1 £3.  
-Any two zones excluding zone 1 £2.  
-Any three zones £3.  
-Any bus journey £1.  
+
+| Journey                        | Fare |
+| ------------------------------ |:----:|
+| Anywhere in Zone 1             |  £2  |
+| Any one zone outside zone 1    |  £2  |
+| Any two zones including zone 1 |  £3  |
+| Any two zones excluding zone 1 |  £2  |
+| Any three zones                |  £3  |
+| Any bus journey                |  £1  |
+
 The maximum possible fare is therefore £3.20.
 
 ## Setting up instructions
