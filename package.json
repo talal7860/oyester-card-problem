@@ -48,6 +48,6 @@
   "dependencies": {
     "coveralls": "^3.0.0",
     "debug": "^2.3.2",
-    "lodash": "^4.3.0"
+    "lodash": "^4.17.19"
   }
 }
